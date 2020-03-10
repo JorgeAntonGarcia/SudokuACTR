@@ -8,11 +8,13 @@
 
 import UIKit
 
-class BigCell: UIButton {
+class Box: UIButton {
     override func awakeFromNib(){
         super.awakeFromNib()
-        
+        setTitle("", for: .normal)
         layer.borderWidth = 2.5/UIScreen.main.nativeScale
         layer.borderColor = UIColor.black.cgColor
+
+        isUserInteractionEnabled = false
     }
 }

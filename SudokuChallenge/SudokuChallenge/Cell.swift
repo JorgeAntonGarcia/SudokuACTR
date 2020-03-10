@@ -9,10 +9,20 @@
 import UIKit
 
 class Cell: UIButton {
+    
+    var id: String?
+    
     override func awakeFromNib(){
         super.awakeFromNib()
         
+        setTitle("", for: .normal)
         layer.borderWidth = 0.5/UIScreen.main.nativeScale
         layer.borderColor = UIColor.black.cgColor
+        id = accessibilityIdentifier
+    }
+    
+    func updateCell(size: CGFloat, color: CGColor){
+        layer.borderWidth = size/UIScreen.main.nativeScale
+        layer.borderColor = color
     }
 }
